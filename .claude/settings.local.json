@@ -1,0 +1,9 @@
+{
+  "enabledMcpjsonServers": [
+    "filesystem",
+    "pinecone",
+    "memory",
+    "playwright"
+  ],
+  "enableAllProjectMcpServers": true
+}
