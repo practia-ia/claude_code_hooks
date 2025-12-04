@@ -25,10 +25,10 @@ Una vez publicado en GitHub, instala directamente desde Claude Code:
 
 ```bash
 # Registrar el marketplace
-/plugin marketplace add owner/claude_code_hooks
+/plugin marketplace add pratia-ia/claude_code_hooks
 
 # Instalar el plugin
-/plugin install conversation-logger@owner
+/plugin install conversation-logger@pratia-ia
 
 # Verificar instalación
 /plugin list
