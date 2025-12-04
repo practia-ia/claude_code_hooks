@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -ExecutionPolicy Bypass -File \"$env:CLAUDE_PLUGIN_DIR/hooks/log-conversation.ps1\"",
+            "command": "powershell -ExecutionPolicy Bypass -Command \"& '$env:CLAUDE_PLUGIN_DIR\\hooks\\log-conversation.ps1'\"",
             "timeout": 10
           }
         ]
@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -ExecutionPolicy Bypass -File \"$env:CLAUDE_PLUGIN_DIR/hooks/log-conversation.ps1\"",
+            "command": "powershell -ExecutionPolicy Bypass -Command \"& '$env:CLAUDE_PLUGIN_DIR\\hooks\\log-conversation.ps1'\"",
             "timeout": 10
           }
         ]
@@ -28,7 +28,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "powershell -ExecutionPolicy Bypass -File \"$env:CLAUDE_PLUGIN_DIR/hooks/log-conversation.ps1\"",
+            "command": "powershell -ExecutionPolicy Bypass -Command \"& '$env:CLAUDE_PLUGIN_DIR\\hooks\\log-conversation.ps1'\"",
             "timeout": 15
           }
         ]
