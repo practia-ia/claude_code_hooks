@@ -1,0 +1,16 @@
+{
+  "name": "claude_code_hooks",
+  "owner": {
+    "name": "practiauy",
+    "email": ""
+  },
+  "plugins": [
+    {
+      "name": "conversation-logger",
+      "source": "./conversation-logger",
+      "description": "Logs Claude Code conversations to local files with automatic rotation",
+      "version": "1.0.0",
+      "author": "practiauy"
+    }
+  ]
+}
