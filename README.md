@@ -20,7 +20,7 @@ Los logs se guardan en `.claude/logs/` dentro del proyecto con rotación automá
 
 ```bash
 # Registrar el marketplace (instala el plugin automáticamente)
-/plugin marketplace add practia-ia/claude_code_hooks
+/plugin marketplace add practia-ia/claude_code_plugins
 
 # Habilitar el plugin
 /plugin enable conversation-logger@practia-ia
