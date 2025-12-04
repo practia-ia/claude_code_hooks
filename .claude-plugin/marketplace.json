@@ -10,7 +10,9 @@
       "source": "./conversation-logger",
       "description": "Logs Claude Code conversations to local files with automatic rotation",
       "version": "1.0.0",
-      "author": "practiauy"
+      "author": {
+        "name": "practiauy",
+        "email": ""
     }
   ]
 }
