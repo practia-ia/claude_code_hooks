@@ -5,5 +5,10 @@
     "pinecone",
     "memory",
     "playwright"
-  ]
+  ],
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:github.com)"
+    ]
+  }
 }

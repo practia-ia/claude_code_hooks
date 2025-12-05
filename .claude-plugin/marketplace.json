@@ -1,5 +1,5 @@
 {
-  "name": "claude_code_hooks",
+  "name": "claude_code_plugins",
   "owner": {
     "name": "practiauy",
     "email": ""
@@ -9,6 +9,16 @@
       "name": "conversation-logger",
       "source": "./conversation-logger",
       "description": "Logs Claude Code conversations to local files with automatic rotation",
+      "version": "1.0.0",
+      "author": {
+        "name": "practiauy",
+        "email": ""
+      }
+    },
+    {
+      "name": "useful-commands",
+      "source": "./useful-commands",
+      "description": "Useful slash commands for PR management and session documentation",
       "version": "1.0.0",
       "author": {
         "name": "practiauy",

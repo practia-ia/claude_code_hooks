@@ -1,0 +1,9 @@
+{
+  "name": "useful-commands",
+  "version": "1.0.0",
+  "description": "Useful slash commands for PR management and session documentation",
+  "author": {
+    "name": "practiauy",
+    "email": ""
+  }
+}

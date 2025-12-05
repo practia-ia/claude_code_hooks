@@ -10,7 +10,7 @@ Claude Code plugin marketplace containing the `conversation-logger` plugin. This
 
 ```bash
 # Register the marketplace (auto-installs the plugin)
-/plugin marketplace add practia-ia/claude_code_hooks
+/plugin marketplace add practia-ia/claude_code_plugins
 
 # Enable the plugin
 /plugin enable conversation-logger@practia-ia
@@ -28,6 +28,13 @@ conversation-logger/
 │   ├── hooks.json                 # Hook event definitions and commands
 │   └── log-conversation.ps1       # Main PowerShell logging script
 └── README.md                      # Plugin documentation (Spanish)
+useful-commands/
+├── .claude-plugin/plugin.json     # Plugin metadata
+├── commands/                      # Slash commands (auto-discovered)
+│   ├── create-pr.md              # Create Azure DevOps PR
+│   ├── document.md               # Document current session
+│   └── update-pr.md              # Update existing PR
+└── README.md                      # Plugin documentation
 ```
 
 ## Architecture
@@ -36,17 +43,18 @@ conversation-logger/
 
 The plugin registers hooks for three Claude Code events in `hooks.json`:
 
-| Event | Trigger | Timeout |
-|-------|---------|---------|
-| `UserPromptSubmit` | User sends a message | 10s |
-| `PostToolUse` | Any tool completes (wildcard matcher) | 10s |
-| `Stop` | Assistant response completes | 15s |
+| Event              | Trigger                               | Timeout |
+| ------------------ | ------------------------------------- | ------- |
+| `UserPromptSubmit` | User sends a message                  | 10s     |
+| `PostToolUse`      | Any tool completes (wildcard matcher) | 10s     |
+| `Stop`             | Assistant response completes          | 15s     |
 
 All hooks execute the same PowerShell script with different JSON input via stdin.
 
 ### Hook Input JSON
 
 Claude Code passes a JSON object to the hook with these fields:
+
 - `session_id`: Unique session identifier
 - `hook_event_name`: Event type (`UserPromptSubmit`, `PostToolUse`, `Stop`)
 - `prompt`: User message (UserPromptSubmit only)
@@ -61,6 +69,7 @@ Claude Code passes a JSON object to the hook with these fields:
 **Rotation**: When log exceeds 512 KB, renamed to `conversation-YYYYMMDD-HHmmss.log`
 
 **Tool Input Summarization** (to prevent log bloat):
+
 - Read/Write/Edit: Logs file path only
 - Bash: First 200 chars of command
 - Grep/Glob: Search pattern only
